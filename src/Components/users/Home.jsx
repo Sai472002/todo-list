@@ -44,8 +44,8 @@ function Home() {
     <div className="h-full relative w-full  bg-[url('/image5.jpg')] bg-cover bg-no-repeat flex flex-col gap-2 items-center">
       <Nav />
       <ShowDate/>
-      <AddTodo handleAdd = {handleAdd} handleChange={handleChange}/>
-      <TodoList list={data} onDelete={handleDelete} handleCheck={handleCheck} todo={todo} />
+      <AddTodo handleAdd = {handleAdd} handleChange={handleChange} todo={todo}/>
+      <TodoList list={data} onDelete={handleDelete} handleCheck={handleCheck}  />
     </div>
   );
 }

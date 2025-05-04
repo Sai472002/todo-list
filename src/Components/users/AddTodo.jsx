@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 
-function AddTodo({handleAdd,handleChange}) {
+function AddTodo({todo ,handleAdd,handleChange}) {
 
   return (
     <div className="flex h-[60px] w-[95%] md:w-[45%] bg-black/20 rounded-md backdrop-blur-lg items-center justify-between px-4">
