@@ -27,9 +27,15 @@ function Home() {
     }
 
     const handleAdd = ()=>{
+      if (todo.trim() === "") {
+        showMessage("error", "Task cannot be empty");
+        return;
+      }
       const temp = {todo,done:false}
       setData((prev)=>[...prev,temp],
+      setTodos(""),
       showMessage("success","Task created successfully")
+
       )
     }
     useEffect(()=>localStorage.setItem(`${user}-todos`,JSON.stringify(data)),[data])
@@ -39,7 +45,7 @@ function Home() {
       <Nav />
       <ShowDate/>
       <AddTodo handleAdd = {handleAdd} handleChange={handleChange}/>
-      <TodoList list={data} onDelete={handleDelete} handleCheck={handleCheck} />
+      <TodoList list={data} onDelete={handleDelete} handleCheck={handleCheck} todo={todo} />
     </div>
   );
 }
